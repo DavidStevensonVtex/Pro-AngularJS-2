@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Example</title>
+    <script src="angular.js"></script>
+    <script type="text/javascript">
+        let myData = {
+            name: "Adam",
+            weather: "sunny"
+        } ;
+
+        let hasName = "name" in myData;
+        let hasDate = "date" in myData;
+
+        console.log(`hasName: ${hasName}`);
+        console.log(`hasDate: ${hasDate}`);
+    </script>
+</head>
+<body>
+    This is a simple example.
+</body>
+</html>
