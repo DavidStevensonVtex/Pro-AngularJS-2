@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Example</title>
+    <script src="angular.js"></script>
+    <script type="text/javascript">
+
+        let myArray = [ 100, "Adam", true ] ;
+
+        for ( let i = 0 ; i < myArray.length ; i++ ) {
+            console.log(`Index ${i}: ${myArray[i]}`);
+        }
+
+        console.log("---");
+
+        for ( let value of myArray ) {
+            console.log(`Value: ${value}`);
+        }
+
+        console.log("---");
+
+        angular.forEach ( myArray, function(value, key) {
+            console.log(`${key}: ${value}`);
+        });
+    </script>
+</head>
+<body>
+    This is a simple example.
+</body>
+</html>
