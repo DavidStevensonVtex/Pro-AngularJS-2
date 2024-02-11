@@ -140,6 +140,7 @@
     <Content Include="Content\app.html" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\controllers\sportsStore.js" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Web.config" />
@@ -155,7 +156,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Content\components\" />
-    <Folder Include="Content\controllers\" />
     <Folder Include="Content\filters\" />
     <Folder Include="Content\ngmodules\" />
     <Folder Include="Content\views\" />
