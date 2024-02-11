@@ -3,7 +3,7 @@
 
 		let selectedCategory = null;
 
-		$scope.selectCategor = function (newCategory) {
+		$scope.selectCategory = function (newCategory) {
 			selectedCategory = newCategory;
 		}
 
