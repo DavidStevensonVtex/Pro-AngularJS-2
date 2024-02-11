@@ -71,6 +71,7 @@
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\Listing_5-42.html" />
+    <Content Include="Content\Listing_5-43.html" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
