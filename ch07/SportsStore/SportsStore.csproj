@@ -143,6 +143,7 @@
     <Content Include="Content\controllers\productListControllers.js" />
     <Content Include="Content\controllers\sportsStore.js" />
     <Content Include="Content\filters\customFilters.js" />
+    <Content Include="Content\productList.html" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Web.config" />
