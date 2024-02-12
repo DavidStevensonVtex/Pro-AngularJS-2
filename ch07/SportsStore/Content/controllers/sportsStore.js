@@ -8,6 +8,7 @@
 				$scope.data.products = data;
 			})
 			.error(function (error) {
+				console.log("error", error);
 				$scope.data.error = error;
 			});
 	});

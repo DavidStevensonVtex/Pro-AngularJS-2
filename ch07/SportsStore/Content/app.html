@@ -18,6 +18,10 @@
         <cart-summary />
     </div>
 
+    <div class="alert alert-danger" ng-show="data.error">
+        Error ({{data.error.ExceptionMessage}}). The product data was not loaded.
+        <a href="/Content/app.html" class="alert-link">Click here to try again.</a>
+    </div>
     <div class="panel panel-default row" ng-controller="productListCtrl">
         <div class="col-xs-3">
             <a ng-click="selectCategory()" class="btn btn-block btn-default btn-lg"

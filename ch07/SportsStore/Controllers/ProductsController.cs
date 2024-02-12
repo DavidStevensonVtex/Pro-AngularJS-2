@@ -15,7 +15,10 @@ namespace SportsStore.Controllers
         public IEnumerable<Product> GetProducts()
         {
             //throw new Exception("Failed to get data from repository.");
-            //throw new HttpResponseException(HttpStatusCode.BadRequest);
+            //throw new HttpResponseException(
+            //    new HttpResponseMessage(HttpStatusCode.BadRequest) {
+            //        ReasonPhrase = "An error occurred getting data from the respository."
+            //    });
             return Repository.Products;
         }
     }
