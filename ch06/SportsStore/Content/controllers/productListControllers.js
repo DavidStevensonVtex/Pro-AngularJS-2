@@ -13,6 +13,10 @@
 			$scope.selectedPage = 1;
 		}
 
+		$scope.selectPage = function (newPage) {
+			$scope.selectedPage = newPage;
+		}
+
 		$scope.categoryFilterFn = function (product) {
 			return selectedCategory == null ||
 				product.category == selectedCategory;

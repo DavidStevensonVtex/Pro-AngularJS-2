@@ -38,7 +38,7 @@
 				}
 				return result;
 			} else {
-				erturn data;
+				return data;
 			}
 		}
 	})
