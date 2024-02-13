@@ -6,7 +6,7 @@
 		return {
 			addProduct: function (id, name, price) {
 				let addedToExistingItem = false;
-				for (let item of cardData) {
+				for (let item of cartData) {
 					if (item.id == id) {
 						item.count++;
 						addedToExistingItem = true;
