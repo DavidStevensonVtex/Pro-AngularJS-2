@@ -140,6 +140,8 @@
     <Content Include="Content\app.html" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\components\cart\cart.js" />
+    <Content Include="Content\components\cart\cartSummary.html" />
     <Content Include="Content\controllers\productListControllers.js" />
     <Content Include="Content\controllers\sportsStore.js" />
     <Content Include="Content\filters\customFilters.js" />
@@ -158,7 +160,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Content\components\" />
     <Folder Include="Content\ngmodules\" />
     <Folder Include="Scripts\" />
   </ItemGroup>

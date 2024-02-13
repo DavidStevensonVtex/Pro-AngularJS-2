@@ -1,4 +1,4 @@
-﻿angular.module("cart")
+﻿angular.module("cart", [])
 	.factory("cart", function () {
 
 		let cartData = [];
