@@ -145,6 +145,7 @@
     <Content Include="Content\controllers\productListControllers.js" />
     <Content Include="Content\controllers\sportsStore.js" />
     <Content Include="Content\filters\customFilters.js" />
+    <Content Include="Content\views\checkoutSummary.html" />
     <Content Include="Content\views\productList.html" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
