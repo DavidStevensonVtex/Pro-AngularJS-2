@@ -146,6 +146,7 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\components\cart\cart.js" />
     <Content Include="Content\components\cart\cartSummary.html" />
+    <Content Include="Content\controllers\adminControllers.js" />
     <Content Include="Content\controllers\checkoutControllers.js" />
     <Content Include="Content\controllers\productListControllers.js" />
     <Content Include="Content\controllers\sportsStore.js" />
