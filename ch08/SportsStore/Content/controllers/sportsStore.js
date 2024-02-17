@@ -1,7 +1,8 @@
 ﻿angular.module("sportsStore")
 	.constant("dataUrl", "http://localhost:5500/products")
 	.constant("orderUrl", "http://localhost:5500/orders")
-	.controller("sportsStoreCtrl", function ($scope, $http, dataUrl) {
+	.controller("sportsStoreCtrl", function ($scope, $http, $location,
+			dataUrl, orderUrl, cart) {
 		$scope.data = {};
 
 		$http.get(dataUrl)
