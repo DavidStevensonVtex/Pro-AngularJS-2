@@ -18,4 +18,4 @@
 					$scope.authenticationError = error;
 				});
 		}
-	})
+	});
