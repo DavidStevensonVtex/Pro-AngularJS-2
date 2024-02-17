@@ -6,12 +6,29 @@
     <link href="bootstrap.css" rel="stylesheet" />
     <link href="bootstrap-theme.css" rel="stylesheet" />
     <script type="text/javascript">
-        angular.module("sportsStore", ["customFilters", "cart"]);
+        angular.module("sportsStore", ["customFilters", "cart", "ngRoute"])
+            .config(function ($routeProvider) {
+
+                console.log($routeProvider);
+
+                $routeProvider.when("/checkout", {
+                    templateUrl: "/Content/views/checkoutSummary.html"
+                });
+
+                $routeProvider.when("/products", {
+                    templateUrl: "/Content/views/productList.html"
+                });
+
+                $routeProvider.otherwise({
+					templateUrl: "/Content/views/productList.html"
+                });
+            })
     </script>
     <script src="controllers/sportsStore.js"></script>
     <script src="filters/customFilters.js"></script>
     <script src="controllers/productListControllers.js"></script>
     <script src="components/cart/cart.js"></script>
+    <script src="ngmodules/angular-route.js"></script>
 </head>
 <body ng-controller="sportsStoreCtrl">
     <div class="navbar navbar-inverse">
@@ -24,6 +41,6 @@
         <a href="/Content/app.html" class="alert-link">Click here to try again.</a>
     </div>
 
-    <ng-include src="'views/productList.html'"></ng-include>
+    <ng-view />
 </body>
 </html>
