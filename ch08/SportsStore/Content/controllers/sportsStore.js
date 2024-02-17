@@ -19,7 +19,7 @@
 			order.products = cart.getProducts();
 			$http.post(orderUrl, order)
 				.success(function (data) {
-					$scopedata.orderId = data.id;
+					$scope.data.orderId = data.id;
 					cart.getProducts().length = 0;
 				})
 				.error(function (error) {
