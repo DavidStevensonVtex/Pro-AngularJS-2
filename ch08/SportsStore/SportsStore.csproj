@@ -151,7 +151,7 @@
     <Content Include="Content\ngmodules\angular-route.js" />
     <Content Include="Content\ngmodules\angular-route.min.js" />
     <Content Include="Content\views\checkoutSummary.html" />
-    <Content Include="Content\views\placeorder.html" />
+    <Content Include="Content\views\placeOrder.html" />
     <Content Include="Content\views\productList.html" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />

@@ -2,8 +2,6 @@
 	.controller("cartSummaryController", function ($scope, cart) {
 
 		$scope.cartData = cart.getProducts();
-		console.log("cart", cart);
-		console.log("$scope.cartData", $scope.cartData);
 
 		$scope.total = function () {
 			let total = 0;
