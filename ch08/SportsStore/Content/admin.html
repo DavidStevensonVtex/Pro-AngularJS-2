@@ -1,41 +1,33 @@
 ﻿<!DOCTYPE html>
 <html ng-app="sportsStoreAdmin">
-    <head>
-        <title>Administration</title>
-        <script src="angularjs/angular.js"></script>
-        <script src="ngmodules/angular-route.js"></script>
-        <link href="bootstrap.css" rel="stylesheet" />
-        <link href="bootstrap-theme.css" rel="stylesheet" />
-        <script type="text/javascript">
-            angular.module("sportsStoreAdmin", ["ngRoute"])
-                .config(function ($routeProvider) {
+<head>
+    <title>Administration</title>
+    <script src="angularjs/angular.js"></script>
+    <script src="ngmodules/angular-route.js"></script>
+    <script src="ngmodules/angular-resource.js"></script>
+    <link href="bootstrap.css" rel="stylesheet" />
+    <link href="bootstrap-theme.css" rel="stylesheet" />
+    <script type="text/javascript">
+        angular.module("sportsStoreAdmin", ["ngRoute", "ngResource"])
+            .config(function ($routeProvider) {
 
-                    $routeProvider.when("/login", {
-                        templateUrl: "/Content/views/adminLogin.html"
-                    });
-
-                    $routeProvider.when("/main", {
-                        templateUrl: "/Content/views/adminMain.html"
-                    });
-
-                    $routeProvider.otherwise({
-                        redirectTo: "/login"
-                    });
+                $routeProvider.when("/login", {
+                    templateUrl: "/Content/views/adminLogin.html"
                 });
-        </script>
-        <script src="controllers/adminControllers.js"></script>
-    </head>
+
+                $routeProvider.when("/main", {
+                    templateUrl: "/Content/views/adminMain.html"
+                });
+
+                $routeProvider.otherwise({
+                    redirectTo: "/login"
+                });
+            });
+    </script>
+    <script src="controllers/adminControllers.js"></script>
+    <script src="controllers/adminProductController.js"></script>
+</head>
     <body>
-        <div class="panel panel-default row" ng-controller="mainCtrl">
-            <div class="col-xs-3 panel-body">
-                <a ng-repeat="item in screens" class="btn btn-block btn-default"
-                   ng-class="{ 'btn-primary': item == current }" ng-click="setScreen($index)">
-                    {{ item }}
-                </a>
-            </div>
-            <div class="col-xs-8 panel-body">
-                <div ng-include="getScreen()" />
-            </div>
-        </div>
+        <ng-view />
     </body>
 </html>

@@ -20,7 +20,7 @@ namespace SportsStore.Models
             new Product ( 9, "Bling-Bling King", "Gold-plated, diamond-studded King", "Chess", 1200m)
         };
 
-        public static IEnumerable<Product> Products
+        public static List<Product> Products
         {
             get { return products; }
         }

@@ -3,7 +3,7 @@
 	.config(function ($httpProvider) {
 		$httpProvider.defaults.withCredentials = true;
 	})
-	.controller("productTrl", function ($scope, $resource, productUrl) {
+	.controller("productCtrl", function ($scope, $resource, productUrl) {
 
 		$scope.productsResource = $resource(productUrl + ":id", { id: "@id" });
 
