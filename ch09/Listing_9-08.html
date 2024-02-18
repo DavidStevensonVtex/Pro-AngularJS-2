@@ -7,17 +7,15 @@
     <script src="angular.js"></script>
     <script type="text/javascript">
 
-        let myApp = angular.module("exampleApp", []);
-
-        myApp.controller("dayCtrl", function($scope) {
-            let dayNames = [ "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday" ] ;
-            $scope.day = dayNames[new Date().getDay()] ;
-        });
-
-        myApp.controller("tomorrowCtrl", function($scope) {
-            let dayNames = [ "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday" ] ;
-            $scope.day = dayNames[(new Date().getDay() + 1) % 7]
-        });
+        angular.module("exampleApp", [])
+            .controller("dayCtrl", function($scope) {
+                let dayNames = [ "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday" ] ;
+                $scope.day = dayNames[new Date().getDay()] ;
+            })
+            .controller("tomorrowCtrl", function($scope) {
+                let dayNames = [ "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday" ] ;
+                $scope.day = dayNames[(new Date().getDay() + 1) % 7]
+            });
     </script>
 </head>
 <body>
