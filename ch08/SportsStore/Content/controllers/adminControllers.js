@@ -1,7 +1,7 @@
 ﻿angular.module("sportsStoreAdmin")
 	.constant("authUrl", "http://localhost:5500/users/login")
 	.controller("authCtrl", function ($scope, $http, $location, authUrl) {
-
+		console.log("authCtrl initializing");
 		$scope.authenticate = function (user, pass) {
 			$http.post(authUrl, {
 				username: user,
