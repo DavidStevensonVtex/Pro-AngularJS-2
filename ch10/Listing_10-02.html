@@ -27,6 +27,12 @@
         <div>
             There are <span ng-bind="todos.length"></span> items
         </div>
+
+        <div ng-bind-template="First: {{ todos[0].action }}. Second: {{ todos[1].action }}"></div>
+
+        <div ng-non-bindable>
+            AngularJS uses {{ and }} characters for templates
+        </div>
     </div>
 </body>
 </html>
