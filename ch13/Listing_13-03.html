@@ -24,7 +24,7 @@
 <body>
     <div class="well" ng-controller="simpleCtrl">
         <p>The city is: {{ city }}</p>
-        <p>The country is: {{ getCountry(city) }} </p>
+        <p>The country is: {{ getCountry(city) || "Unknown" }} </p>
     </div>
 </body>
 </html>
