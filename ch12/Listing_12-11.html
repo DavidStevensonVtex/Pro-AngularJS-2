@@ -9,9 +9,9 @@
         angular.module("exampleApp", [])
             .controller("defaultCtrl", function($scope) {
                 $scope.addUser = function ( userDetails ) {
-                    if (myForm.$valid) {
-                        $scope.message = userDetails.name + 
-                        " (" + userDetails.email + ") (" + userDetails.agreed + ")" ;
+                    console.log("$scope.myForm.$valid:", $scope.myForm.$valid);
+                    if ($scope.myForm.$valid) {
+                        $scope.message = " (" + userDetails.email + ")" ;
                     } else {
                         $scope.showValidation = true ;
                     }
