@@ -23,6 +23,7 @@
         span.summary.ng-invalid { color: red ; font-weight: bold ; }
         span.summary.ng-valid { color: green ; }
         form .ng-invalid-email.ng-dirty { background-color: lightgoldenrodyellow ; }
+        div.error { color: red ; font-weight: bold ; }
     </style>
 </head>
 <body>
@@ -38,6 +39,14 @@
                     <label>Email:</label>
                     <input name="userEmail" type="email" class="form-control"
                             required ng-model="newUser.email">
+                    <div class="error" ng-show="myForm.userEmail.$invalid && myForm.userEmail.$dirty">
+                        <span ng-show="myForm.userEmail.$error.email">
+                            Please enter a valid email address
+                        </span>
+                        <span ng-show="myForm.userEmail.$error.required">
+                            Please enter a value
+                        </span>
+                    </div>
                 </div>
                 <div class="form-group">
                     <label>
