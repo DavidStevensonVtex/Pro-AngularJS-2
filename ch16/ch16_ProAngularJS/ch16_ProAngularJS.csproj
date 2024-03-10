@@ -137,6 +137,7 @@
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\itemTemplate.html" />
+    <Content Include="Content\Listing_16-12.html" />
     <Content Include="Content\Listing_16-10.html" />
     <Content Include="Content\tableTemplate.html" />
     <Content Include="favicon.ico" />
