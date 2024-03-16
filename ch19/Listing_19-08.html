@@ -20,6 +20,9 @@
 
                 $scope.show = function(id) {
                     $location.hash(id);
+                    if (id == "bottom") {
+                        $anchorScroll();
+                    }
                 }
             });
         </script>
