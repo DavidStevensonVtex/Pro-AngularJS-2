@@ -136,6 +136,8 @@
     <Content Include="Content\angular.js" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\Listing_20-09.html" />
+    <Content Include="Content\Listing_20-08.html" />
     <Content Include="Content\Listing_20-07.html" />
     <Content Include="Content\Listing_20-06.html" />
     <Content Include="Content\Listing_20-04.html" />
