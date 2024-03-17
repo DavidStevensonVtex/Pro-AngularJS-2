@@ -139,6 +139,7 @@
     <Content Include="Content\Listing_20-04.html" />
     <Content Include="Content\Listing_20-03.html" />
     <Content Include="Content\Listing_20-02.html" />
+    <Content Include="Content\productData.xml" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Web.config" />
