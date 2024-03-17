@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html>
+<html ng-app="exampleApp">
+<head>
+	<title>Ajax</title>
+	<script src="angular.js"></script>
+	<link href="bootstrap.css" rel="stylesheet" />
+	<link href="bootstrap-theme.css" rel="stylesheet" />
+	<script>
+		angular.module("exampleApp", [])
+			.controller("defaultCtrl", function ($scope, $http) {
+				$scope.loadData = function () {
+					let config = {
+						transformResponse: function (data, headers) {
+							//console.log(headers("content-type"), angular.isString(data));
+							if (headers("content-type") == "text/xml" && angular.isString(data)) {
+								let products = [];
+								let productElems = angular.element(data.trim()).find("product");
+								for (let i = 0; i < productElems.length; i++) {
+									let product = productElems.eq(i);
+									//console.log("product", product);
+									products.push({
+										name: product.attr("name"),
+										category: product.attr("category"),
+										price: product.attr("price")
+									});
+								}
+								//console.log("products", products);
+								return products;
+							} else {
+								return data;
+							}
+						}
+					}
+					$http.get("productData.xml", config)
+						.success(function (data) {
+							//console.log("data", data);
+							$scope.products = data;
+						});
+				}
+			})
+	</script>
+</head>
+<body ng-controller="defaultCtrl">
+	<div class="panel panel-default">
+		<div class="panel-body">
+			<table class="table table-striped table-bordered">
+				<thead><tr><th>Name</th><th>Category</th><th>Price</th></tr></thead>
+				<tbody>
+					<tr ng-hide="products.length">
+						<td colspan="3" class="text-center">No Data</td>
+					</tr>
+					<tr ng-repeat="item in products">
+						<td>{{ item.name }}</td>
+						<td>{{ item.category }}</td>
+						<td>{{ item.price | currency }}</td>
+					</tr>
+				</tbody>
+			</table>
+			<p>
+				<button class="btn btn-primary" ng-click="loadData()">Load Data</button>
+			</p>
+		</div>
+	</div>
+</body>
+</html>
