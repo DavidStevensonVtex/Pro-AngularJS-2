@@ -4,5 +4,5 @@
 	{ "name":  "Pears", "category":  "Fruit", "price": 2.02, "expiry":  6 },
 	{ "name":  "Tuna", "category":  "Fish", "price": 20.45, "expiry":  2 },
 	{ "name":  "Salmon", "category":  "Fish", "price": 17.93, "expiry":  1 },
-	{ "name":  "Apples", "category":  "Fish", "price": 1.212.93, "expiry":  3 }
+	{ "name":  "Apples", "category":  "Fish", "price": 12.93, "expiry":  3 }
 ]
