@@ -12,7 +12,9 @@
                 $scope.dangerousData = "<p>This is <b onmouseover=alert('Attack')>dangerous</b> data</p>";
 
                 $scope.$watch("dangerousData", function(newValue) {
+                    console.log("unsanitized html: ", newValue);
                     $scope.htmlData = $sanitize(newValue);
+                    console.log("$scope.htmlData", $scope.htmlData);
                 })
             });
         </script>
@@ -20,7 +22,7 @@
     <body ng-controller="defaultCtrl">
         <div class="well">
             <p><input class="form-control" ng-model="dangerousData" /></p>
-            <p ng-bind-html="htmlData"></p>
+            <p ng-bind="htmlData"></p>
         </div>
     </body>
 </html>
