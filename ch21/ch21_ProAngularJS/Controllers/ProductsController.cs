@@ -27,7 +27,7 @@ namespace SportsStore.Controllers
         [HttpPost]
         public Product PostProduct([FromBody] Product product)
         {
-            //product.Id = Repository.Products.Max(p => p.Id) + 1;
+            product.Id = Repository.Products.Max(p => p.Id) + 1;
             Repository.Products.Add(product);
             return product;
         }
