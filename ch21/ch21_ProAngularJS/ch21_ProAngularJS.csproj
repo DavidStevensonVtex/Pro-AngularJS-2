@@ -136,11 +136,13 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\angular-resource.js" />
     <Content Include="Content\angular.js" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\editorView.html" />
     <Content Include="Content\increment.js" />
+    <Content Include="Content\Listing_21-13.html" />
     <Content Include="Content\Listing_21-10.html" />
     <Content Include="Content\products.js" />
     <Content Include="Content\Listing_21-01.html" />
