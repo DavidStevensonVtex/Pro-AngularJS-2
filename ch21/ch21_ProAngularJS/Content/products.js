@@ -28,12 +28,19 @@ angular.module("exampleApp", [])
 		}
 
 		$scope.updateProduct = function (product) {
-			for (let i = 0; i < $scope.products.length; i++) {
-				if ($scope.products[i].id == product.id) {
-					$scope.products[i] = product;
-					break;
+			$http({
+				url: baseUrl + product.id,
+				method: "PUT",
+				data: product
+			}).success(function (modifiedProduct) {
+				for (let i = 0; i < $scope.products.length; i++) {
+					if ($scope.products[i].id == modifiedProduct.id) {
+						$scope.products[i] = modifiedProduct;
+						break;
+					}
 				}
-			}
+			});
+
 			$scope.displayMode = "list";
 		}
 

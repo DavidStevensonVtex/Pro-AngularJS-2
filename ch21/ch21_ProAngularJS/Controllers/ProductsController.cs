@@ -32,8 +32,9 @@ namespace SportsStore.Controllers
             return product;
         }
 
+        [Route("products/{id}")]
         [HttpPut]
-        public Product PutProduct([FromBody] Product product)
+        public Product PutProduct([FromBody] Product product, int id)
         {
             Product newProduct = Repository.Products.Find(p => p.Id == product.Id);
             newProduct.Price = product.Price;
