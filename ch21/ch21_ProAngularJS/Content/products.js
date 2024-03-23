@@ -30,4 +30,24 @@ angular.module("exampleApp", [])
 			}
 			$scope.displayMode = "list";
 		}
+
+		$scope.editOrCreateProduct = function (product) {
+			$scope.currentProduct = product ? angular.copy(product) : {};
+			$scope.displayMode = "edit";
+		}
+
+		$scope.saveEdit = function (product) {
+			if (angular.isDefined(product.id)) {
+				$scope.updateProduct(product);
+			} else {
+				$scope.createProduct(product);
+			}
+		}
+
+		$scope.cancelEdit = function () {
+			$scope.currentProduct = {};
+			$scope.displayMode = "list";
+		}
+
+		$scope.listProducts();
 	});
