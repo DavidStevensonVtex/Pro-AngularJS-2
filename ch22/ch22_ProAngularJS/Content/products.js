@@ -23,10 +23,22 @@ angular.module("exampleApp", ["increment", "ngResource", "ngRoute"])
 			templateUrl: "/Content/tableView.html"
 		});
 	})
-	.controller("defaultCtrl", function ($scope, $http, $resource, $location, baseUrl) {
+	.controller("defaultCtrl", function ($scope, $http, $resource, $location,
+			$route, $routeParams, baseUrl) {
 
-		$scope.displayMode = "list";
 		$scope.currentProduct = null;
+
+		$scope.$on("$routeChangeSuccess", function () {
+			if ($location.path().indexOf("/edit/") == 0) {
+				let id = $routeParams["id"];
+				for (let product of $scope.products) {
+					if (product.id == id) {
+						$scope.currentProduct = product;
+						break;
+					}
+				}
+			}
+		});
 
 		$scope.productsResource = $resource(baseUrl + ":id", { id: "@id" },
 			{ create: { method: "POST" }, save: { method: "PUT" } });
