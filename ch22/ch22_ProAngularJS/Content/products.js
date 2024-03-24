@@ -19,7 +19,7 @@ angular.module("exampleApp", ["increment", "ngResource", "ngRoute"])
 			templateUrl: "/Content/tableView.html"
 		});
 	})
-	.controller("defaultCtrl", function ($scope, $http, $resource, baseUrl) {
+	.controller("defaultCtrl", function ($scope, $http, $resource, $location, baseUrl) {
 
 		$scope.displayMode = "list";
 		$scope.currentProduct = null;
@@ -36,24 +36,25 @@ angular.module("exampleApp", ["increment", "ngResource", "ngRoute"])
 			product.$delete().then(function () {
 				$scope.products.splice($scope.products.indexOf(product), 1);
 			});
-			$scope.displayMode = "list";
+
+			$location.path("/list");
 		}
 
 		$scope.createProduct = function (product) {
 			new $scope.productsResource(product).$create().then(function (newProduct) {
 				$scope.products.push(newProduct);
-				$scope.displayMode = "list";
+				$location.path("/list");
 			});
 		}
 
 		$scope.updateProduct = function (product) {
 			product.$save();
-			$scope.displayMode = "list";
+			$location.path("/list");
 		}
 
-		$scope.editOrCreateProduct = function (product) {
+		$scope.editProduct = function (product) {
 			$scope.currentProduct = product ? product : {};
-			$scope.displayMode = "edit";
+			$location.path("/edit");
 		}
 
 		$scope.saveEdit = function (product) {
@@ -62,6 +63,8 @@ angular.module("exampleApp", ["increment", "ngResource", "ngRoute"])
 			} else {
 				$scope.createProduct(product);
 			}
+
+			$scope.currentProduct = {};
 		}
 
 		$scope.cancelEdit = function () {
@@ -69,7 +72,7 @@ angular.module("exampleApp", ["increment", "ngResource", "ngRoute"])
 				$scope.currentProduct.$get();
 			}
 			$scope.currentProduct = {};
-			$scope.displayMode = "list";
+			$location.path("/list");
 		}
 
 		$scope.listProducts();
