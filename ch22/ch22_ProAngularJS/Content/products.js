@@ -68,11 +68,6 @@ angular.module("exampleApp", ["increment", "ngResource", "ngRoute"])
 			$location.path("/list");
 		}
 
-		$scope.editProduct = function (product) {
-			$scope.currentProduct = product;
-			$location.path("/edit");
-		}
-
 		$scope.saveEdit = function (product) {
 			if (angular.isDefined(product.id)) {
 				$scope.updateProduct(product);
