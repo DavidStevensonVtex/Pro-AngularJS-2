@@ -13,8 +13,6 @@
 				button.addClass("btn btn-primary btn-xs");
 				element.append(button);
 				button.on("click", function () {
-					console.log("scope.property", scope.property);
-					console.log("scope.item", scope.item);
 					scope.item[scope.property]++;
 					if (scope.restful) {
 						scope.item[scope.method]();
