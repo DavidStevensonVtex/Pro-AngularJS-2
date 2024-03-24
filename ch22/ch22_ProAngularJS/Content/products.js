@@ -5,7 +5,8 @@ angular.module("exampleApp", ["increment", "ngResource"])
 		$scope.displayMode = "list";
 		$scope.currentProduct = null;
 
-		$scope.productsResource = $resource(baseUrl + ":id", { id: "@id" });
+		$scope.productsResource = $resource(baseUrl + ":id", { id: "@id" },
+			{ create: { method: "POST" }, save: { method: "PUT" } });
 
 		$scope.listProducts = function () {
 			$scope.products = $scope.productsResource.query();
@@ -20,7 +21,7 @@ angular.module("exampleApp", ["increment", "ngResource"])
 		}
 
 		$scope.createProduct = function (product) {
-			new $scope.productsResource(product).$save().then(function (newProduct) {
+			new $scope.productsResource(product).$create().then(function (newProduct) {
 				$scope.products.push(newProduct);
 				$scope.displayMode = "list";
 			});
