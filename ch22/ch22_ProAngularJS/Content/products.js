@@ -1,5 +1,24 @@
-angular.module("exampleApp", ["increment", "ngResource"])
+angular.module("exampleApp", ["increment", "ngResource", "ngRoute"])
 	.constant("baseUrl", "http://localhost:5500/products/")
+	.config(function ($routeProvider, $locationProvider) {
+		$locationProvider.html5Mode(true);
+
+		$routeProvider.when("/list", {
+			templateUrl: "/Content/tableView.html"
+		});
+
+		$routeProvider.when("/edit", {
+			templateUrl: "/Content/editorView.html"
+		});
+
+		$routeProvider.when("/create", {
+			templateUrl: "/Content/editorView.html"
+		});
+
+		$routeProvider.otherwise({
+			templateUrl: "/Content/tableView.html"
+		});
+	})
 	.controller("defaultCtrl", function ($scope, $http, $resource, baseUrl) {
 
 		$scope.displayMode = "list";
