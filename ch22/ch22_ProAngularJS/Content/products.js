@@ -53,7 +53,7 @@ angular.module("exampleApp", ["increment", "ngResource", "ngRoute"])
 		}
 
 		$scope.editProduct = function (product) {
-			$scope.currentProduct = product ? product : {};
+			$scope.currentProduct = product;
 			$location.path("/edit");
 		}
 
