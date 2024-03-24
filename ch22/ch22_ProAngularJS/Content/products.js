@@ -8,15 +8,13 @@ angular.module("exampleApp", ["increment", "ngResource", "ngRoute"])
 		});
 
 		$routeProvider.when("/edit/:id", {
-			templateUrl: "/Content/editorView.html"
-		});
-
-		$routeProvider.when("/edit/:id/:data*", {
-			templateUrl: "/Content/editorView.html"
+			templateUrl: "/Content/editorView.html",
+			controller: "editCtrl"
 		});
 
 		$routeProvider.when("/create", {
-			templateUrl: "/Content/editorView.html"
+			templateUrl: "/Content/editorView.html",
+			controller: "editCtrl"
 		});
 
 		$routeProvider.otherwise({
@@ -24,7 +22,7 @@ angular.module("exampleApp", ["increment", "ngResource", "ngRoute"])
 		});
 	})
 	.controller("defaultCtrl", function ($scope, $http, $resource, $location,
-			$route, $routeParams, baseUrl) {
+		$route, $routeParams, baseUrl) {
 
 		$scope.currentProduct = null;
 
@@ -63,6 +61,29 @@ angular.module("exampleApp", ["increment", "ngResource", "ngRoute"])
 			});
 		}
 
+		$scope.listProducts();
+	})
+	.controller("editCtrl", function ($scope, $routeParams, $location) {
+		$scope.currentProduct = null;
+
+		if ($location.path().indexOf("/edit/") == 0) {
+			let id = $routeParams["id"];
+			for (let product of $scope.products) {
+				if (product.id == id) {
+					$scope.currentProduct = product;
+					break;
+				}
+			}
+		}
+
+		$scope.cancelEdit = function () {
+			if ($scope.currentProduct && $scope.currentProduct.$get) {
+				$scope.currentProduct.$get();
+			}
+			$scope.currentProduct = {};
+			$location.path("/list");
+		}
+
 		$scope.updateProduct = function (product) {
 			product.$save();
 			$location.path("/list");
@@ -77,14 +98,4 @@ angular.module("exampleApp", ["increment", "ngResource", "ngRoute"])
 
 			$scope.currentProduct = {};
 		}
-
-		$scope.cancelEdit = function () {
-			if ($scope.currentProduct && $scope.currentProduct.$get) {
-				$scope.currentProduct.$get();
-			}
-			$scope.currentProduct = {};
-			$location.path("/list");
-		}
-
-		$scope.listProducts();
 	});
