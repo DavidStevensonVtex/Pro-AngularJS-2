@@ -143,6 +143,7 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\editorView.html" />
     <Content Include="Content\increment.js" />
+    <Content Include="Content\Listing_22-05.html" />
     <Content Include="Content\Listing_22-03.html" />
     <Content Include="Content\Listing_22-01.html" />
     <Content Include="Content\products.js" />
