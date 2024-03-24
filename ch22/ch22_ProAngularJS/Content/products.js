@@ -7,7 +7,11 @@ angular.module("exampleApp", ["increment", "ngResource", "ngRoute"])
 			templateUrl: "/Content/tableView.html"
 		});
 
-		$routeProvider.when("/edit", {
+		$routeProvider.when("/edit/:id", {
+			templateUrl: "/Content/editorView.html"
+		});
+
+		$routeProvider.when("/edit/:id/:data*", {
 			templateUrl: "/Content/editorView.html"
 		});
 
