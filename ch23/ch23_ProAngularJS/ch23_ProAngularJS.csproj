@@ -139,11 +139,13 @@
     <Content Include="Content\angular-animate.js" />
     <Content Include="Content\angular-resource.js" />
     <Content Include="Content\angular-route.js" />
+    <Content Include="Content\angular-touch.js" />
     <Content Include="Content\angular.js" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\editorView.html" />
     <Content Include="Content\increment.js" />
+    <Content Include="Content\Listing_23-05.html" />
     <Content Include="Content\Listing_23-04.html" />
     <Content Include="Content\Listing_23-03.html" />
     <Content Include="Content\Listing_23-01.html" />
